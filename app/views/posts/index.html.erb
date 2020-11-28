@@ -5,13 +5,12 @@
   <% @posts.each do |post| %>
     <hr>
     <div>
-      <% markdown(post.content) %>
+      <%= markdown(post.content) %>
       <td><%= link_to '詳細', post %></td>
       <td><%= link_to '編集', edit_post_path(post) %></td>
       <td><%= link_to '削除', post, method: :delete, data: {confirm: '本当に削除しますか？'} %></td>
     </div>
-    <hr>
-    <% end %>
-<br>
+  <% end %>
+  <hr>
 
 <%= link_to '新規投稿', new_post_path %>
